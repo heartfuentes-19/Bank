@@ -1,28 +1,45 @@
+
+// java
 package firstpackage;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Simple transaction record used by accounts.
+ */
 public class Transaction {
+    private final String type;
+    private final double amount;
+    private final LocalDateTime timestamp;
+    private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
-    private String type;
-    private double amount;
-    private LocalDateTime timeStamp;
-
+    /**
+     * Constructs a Transaction.
+     *
+     * @param type   the transaction type (e.g., "Deposit", "Withdraw")
+     * @param amount the transaction amount
+     */
     public Transaction(String type, double amount) {
         this.type = type;
         this.amount = amount;
-        this.timeStamp = LocalDateTime.now();
+        this.timestamp = LocalDateTime.now();
     }
 
-    public String getFormattedTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return timeStamp.format(formatter);
+    public String getType() {
+        return type;
     }
 
+    public double getAmount() {
+        return amount;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
     public String toString() {
-        return "Transaction type=" + type +
-                ", amount=" + amount +
-                ", time_stamp=" + getFormattedTime();
+        return "Transaction [type=" + type + ", amount=" + amount + ", time_stamp=" + timestamp.format(FORMAT) + "]";
     }
 }

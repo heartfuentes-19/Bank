@@ -1,3 +1,5 @@
+
+// java
 package firstpackage;
 
 public class Main {
@@ -9,33 +11,69 @@ public class Main {
         System.out.println("Account Owner: " + ((SavingsAccount) account).getOwner());
 
         System.out.println("2");
-        account.deposit(1000.13);
+        try {
+            account.deposit(1000.13);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("3");
-        account.deposit(0);
+        try {
+            account.deposit(0);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("4");
-        account.deposit(-500);
+        try {
+            account.deposit(-500);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("5");
-        account.withdraw(500);
+        try {
+            account.withdraw(500);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("6");
-        account.withdraw(1500);
+        try {
+            account.withdraw(1500);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("7");
-        account.withdraw(-100);
+        try {
+            account.withdraw(-100);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("8");
         account.freeze();
-        account.deposit(11500);
+        try {
+            account.deposit(11500);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("9");
-        account.withdraw(500);
+        try {
+            account.withdraw(500);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("10");
         account.unfreeze();
-        account.withdraw(100);
+        try {
+            account.withdraw(100);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("-----------------------------------");
 
